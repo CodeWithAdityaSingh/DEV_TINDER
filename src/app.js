@@ -3,20 +3,26 @@ let express = require('express')
 let app = express()
 
 
+// app.post('/user',(req,res)=>{
+   
+//     res.send({Name : "Aditya Singh",Qualification : "Graduate"})
+// })
 
+app.get('/user',(req,res,next)=>{
+    // console.log(req.query);
+      next()
+//    res.send('i am port 1000')
 
-app.post('/user',(req,res)=>{
-    res.send({Name : "Aditya Singh",Qualification : "Graduate"})
+},
+(req,res,next)=>{
+    // res.send('Request 2')
+    //   next()
+
 })
 
-app.get('/user',(req,res)=>{
-   res.send('i am port 1000')
-
-})
-
-app.delete('/user',(req,res)=>{
-   res.send('Deleted Successfully')
-})
+// app.delete('/user',(req,res)=>{
+//    res.send('Deleted Successfully')
+// })
 
 app.listen(1000,()=>{
 
